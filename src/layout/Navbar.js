@@ -38,7 +38,7 @@ export default function Navbar() {
             <Link className="btn btn-outline-light m-2" to="/">
               Sobre Nosotros
             </Link>
-            <Link className="btn btn-outline-light m-2" to="/">
+            <Link className="btn btn-outline-light m-2" to="/adduser">
               Contacto
             </Link>
             <Link className="btn btn-outline-light m-4 btn-danger" to="/login">
