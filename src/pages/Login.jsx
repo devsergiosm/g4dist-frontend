@@ -1,42 +1,53 @@
 import React, { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Footer from "../componentes/Footer";
 
 const Login = () => {
+    let navigate = useNavigate();
 
     const titleStyles = {
-        padding:"6px 12px",
-        fontSize:"16px",
+        padding:"6px 12px 0 12px",
+        fontSize:"24px",
         borderRadius:"4px",
-        color:"white"
+        color:"white",
+        margin:"0"
       }
 
       const containerStyles = {
         width:"400px",
         borderRadius:"4px",
-        backgroundColor:"black"
+        backgroundColor:"black",
+        margin:"64px 384px"
       }
+
+      const onSubmit = async (e) => {
+        e.preventDefault();
+        alert("Login procesándose")
+        navigate("/articulos/addarticle");
+      };
 
     return ( 
         <div className="container">
-            <div className="row m-4 d-flex justify-content-center" style={containerStyles}>
+            <div className="row d-flex justify-content-center" style={containerStyles}>
                 <>
                     <p style={titleStyles}>ACCEDER</p>
-                    <form action="" className="mt-4 d-flex flex-column">
-                        <label htmlFor="" className="p-4 d-flex justify-content-around">
-                            <span className="text-white">Usuario</span>
-                            <input type="text"/>
+                    <form action="" className="d-flex flex-column" onSubmit={onSubmit}>
+                        <label htmlFor="" className="p-2 d-flex justify-content-between">
+                            <span className="text-white me-2">Usuario</span>
+                            <input type="text" required/>
                         </label>
-                        <label htmlFor="" className="p-4 d-flex justify-content-around">
-                            <span className="text-white">Contraseña</span>
-                            <input type="password"/>
+                        <label htmlFor="" className="p-2 d-flex justify-content-between">
+                            <span className="text-white me-2">Contraseña</span>
+                            <input type="password" required/>
                         </label>
-                        <Link className="btn btn-primary" to="/articulos/addarticle">
-                            Iniciar Sesion
-                        </Link>
-                        <Link className="btn btn-danger mt-4" to="/articulos/addarticle">
-                            Registrarse
-                        </Link>
+                        <div>
+                            <button type="submit" className="btn btn-primary m-1" to="/articulos/addarticle">
+                                Iniciar Sesion
+                            </button>
+                            <button type="submit" className="btn btn-danger m-1" to="/articulos/addarticle">
+                                Registrarse
+                            </button>
+                        </div>
                         <span className="mt-4"> 2020</span>
                     </form>
                 </>

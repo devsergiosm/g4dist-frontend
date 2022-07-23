@@ -44,39 +44,10 @@ export default function AddUser({idSavedUser,setIdSavedUser}) {
   }
 
   return (
-        <>
-          <h2 className="text-center m-4">Registrar Usuario</h2>
+        <div className="col-md-4 offset-md-3 border rounded p-4 mt-2 shadow">
+          <h2 className="text-center m-4">Contacta con nosotros</h2>
 
           <form onSubmit={(e) => onSubmit(e)}>
-            <div style={divStyles}>
-              <label htmlFor="Dni" style={labelStyles} className="form-label">
-                DNI
-              </label>
-              <input
-                styles="display: inline"
-                type={"text"}
-                className="form-control"
-                placeholder="Ingrese dni"
-                name="dni"
-                value={dni}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <div style={divStyles}>
-              <label htmlFor="Username" style={labelStyles} className="form-label">
-                Usuario
-              </label>
-              <input
-                styles="display: inline"
-                type={"text"}
-                className="form-control"
-                placeholder="Ingrese usuario"
-                name="username"
-                value={username}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            
             <div style={divStyles}>
               <label htmlFor="Email" style={labelStyles} className="form-label">
                 Correo
@@ -85,61 +56,44 @@ export default function AddUser({idSavedUser,setIdSavedUser}) {
                 styles="display: inline"
                 type={"text"}
                 className="form-control"
-                placeholder="Ingrese email"
+                placeholder="Ingrese correo"
                 name="email"
                 value={email}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
             <div style={divStyles}>
-              <label htmlFor="Username" style={labelStyles} className="form-label">
-                Contraseña
-              </label>
-              <input
-                styles="display: inline"
-                type={"password"}
-                className="form-control"
-                placeholder="Ingrese contraseña"
-                name="password"
-                value={password}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <div style={divStyles}>
               <label htmlFor="Email" style={labelStyles} className="form-label">
-                Apellido
+                Celular
               </label>
               <input
                 styles="display: inline"
                 type={"text"}
                 className="form-control"
-                placeholder="Ingrese apellidos"
+                placeholder="Ingrese celular"
+                name="email"
+                value={email}
+                onChange={(e) => onInputChange(e)}
+              />
+            </div>
+            <div style={divStyles}>
+              <label htmlFor="Email" style={labelStyles} className="form-label">
+                Comentarios
+              </label>
+              <textarea
+                styles="display: inline"
+                type={"text"}
+                className="form-control"
+                placeholder="Déjenos un comentario"
                 name="apellidos"
                 value={apellidos}
                 onChange={(e) => onInputChange(e)}
               />
             </div>
-            <div style={divStyles}>
-              <label htmlFor="Email" style={labelStyles} className="form-label">
-                Direccion
-              </label>
-              <input
-                styles="display: inline"
-                type={"text"}
-                className="form-control"
-                placeholder="Ingrese direccion"
-                name="direccion"
-                value={direccion}
-                onChange={(e) => onInputChange(e)}
-              />
-            </div>
-            <button type="submit" className="btn btn-outline-primary">
-              Guardar
+            <button type="submit" className="btn btn-success">
+              Enviar
             </button>
-            <Link className="btn btn-outline-danger mx-2" to="/">
-              Cancelar
-            </Link>
           </form>
-        </>
+        </div>
   );
 }

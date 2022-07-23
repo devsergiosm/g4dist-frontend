@@ -32,13 +32,13 @@ export default function Navbar() {
           </button>
 
           <div>
-            <Link className="btn btn-outline-light m-2" to="/login">
+            <Link className="btn btn-outline-light m-2" to="/">
               Inicio
             </Link>
-            <Link className="btn btn-outline-light m-2" to="/adduser">
+            <Link className="btn btn-outline-light m-2" to="/">
               Sobre Nosotros
             </Link>
-            <Link className="btn btn-outline-light m-2" to="/adduser">
+            <Link className="btn btn-outline-light m-2" to="/">
               Contacto
             </Link>
             <Link className="btn btn-outline-light m-4 btn-danger" to="/login">
