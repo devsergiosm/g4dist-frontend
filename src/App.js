@@ -12,11 +12,19 @@ import EditArticle from "./articles/EditArticle";
 import ViewArticle from "./articles/ViewArticle";
 import Transaccion from "./pages/Transaccion";
 import Login from "./pages/Login";
+import PanelArticulos from "./articles/PanelArticulos";
 
 
 function App() {
+
+  const containerStyles = {
+    backgroundColor:"#DDDDDD",
+    width:"100wh",
+    height:"100vh"
+  }
+
   return (
-    <div className="App">
+    <div className="App" style={containerStyles}>
       <Router>
         <Navbar />
 
@@ -26,7 +34,8 @@ function App() {
           <Route exact path="/login" element={<Login />} />
           <Route exact path="/transaccion" element={<Transaccion />} />
           <Route exact path="/articulos" element={<Articulos />} />
-          <Route exact path="/articulos/addarticle" element={<AddArticle />} />
+          {/* <Route exact path="/articulos" element={<PanelArticulos />} /> */}
+          <Route exact path="/articulos/addarticle" element={<PanelArticulos />} />
           <Route exact path="/articulos/editarticle/:id" element={<EditArticle />} />
           <Route exact path="/articulos/viewarticle/:id" element={<ViewArticle />} />
           <Route exact path="/adduser" element={<AddUser />} />

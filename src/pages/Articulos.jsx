@@ -15,7 +15,7 @@ const Articulos = () => {
     }, []);
   
     const loadArticles = async () => {
-      const result = await axios.get("http://localhost:8090/articulos/listar");
+      const result = await axios.get("https://sistemadonaciones.rj.r.appspot.com/articulos/listar");
       setArticles(result.data);
     };
   
@@ -25,13 +25,14 @@ const Articulos = () => {
     };
 
     const divStyles = {
-        display:"flex",
-        flexDirection:"row",
-        padding:"12px",
-        fontSize:"32px",
-        borderRadius:"4px",
-        border:"2px solid rgb(81,132,164)",
-        marginBottom:"16px"
+        // display:"flex",
+        // flexDirection:"row",
+        // padding:"12px",
+        // fontSize:"32px",
+        // borderRadius:"4px",
+        // border:"2px solid rgb(81,132,164)",
+        // marginBottom:"16px"
+        backgroundColor:"#35B4DC"
       }
 
       const btnStyles = {
@@ -49,10 +50,9 @@ const Articulos = () => {
           3: "Malo",
       }
     return ( 
-    <div className='container'>
-        <div  className="py-4">
+        <>
             <header>
-                <div style={divStyles}>
+                <h2 className="text-center m-6" style={divStyles}>
                     ARTICULOS
                     <Link className="btn" style={btnStyles} to="/">
                         Usuarios
@@ -63,7 +63,7 @@ const Articulos = () => {
                     <Link className="btn" style={btnStyles} to="/articulos/addarticle">
                         Agregar Artículo
                     </Link>
-                </div>
+                </h2>
             </header>
             <main>
                 <table className="table table-dark  table-hover border shadow">
@@ -106,8 +106,7 @@ const Articulos = () => {
                     </tbody>
                 </table>
             </main>
-        </div>
-    </div>
+        </>
      );
 }
  

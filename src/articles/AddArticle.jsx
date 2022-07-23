@@ -34,6 +34,10 @@ const AddArticle = ({setIdArticle = 0}) => {
         flexDirection:"row",
         paddingBottom:"12px"
       }
+
+      const titleStyles = {
+        backgroundColor:"#35B4DC"
+      }
     
       const labelStyles = {
         width:"128px",
@@ -45,94 +49,92 @@ const AddArticle = ({setIdArticle = 0}) => {
 
       }
       return (
-            // <div className="col-md-4 offset-md-3 border rounded p-4 mt-2 shadow">
-            <div className="col-md-4 offset-md-3 border rounded p-4 mt-2 shadow">
-            <h2 className="text-center m-6">Registrar Articulo</h2>
-    
-    <form onSubmit={(e) => onSubmit(e)}>
-
-      <div style={divStyles}>
-        <label htmlFor="Estado" style={labelStyles} className="form-label">
-          Tipo
-        </label>
-        <select 
-          styles="display: inline"
-          type={"text"}
-          className="form-control"
-          placeholder="Seleccione tipo de artículo"
-          required
-          name="tipo"
-          value={tipo}
-          onChange={(e) => onInputChange(e)}
-        >
-          <option value="1">Ropa</option>
-          <option value="3">Juguete</option>
-        </select>
-      </div>
-
-      <div style={divStyles}>
-        <label htmlFor="Imagen" style={labelStyles} className="form-label">
-          Imagen
-        </label>
-        <input
-          styles="display: inline"
-          type={"text"}
-          className="form-control"
-          placeholder="Ingrese link de la imagen"
-          name="imagen"
-          value={imagen}
-          onChange={(e) => onInputChange(e)}
-          required
-        />
-      </div>
+            // <div className="col-md-4 offset-md-3 border rounded shadow" style={containerStyles}>
+            <>
+                          <h2 className="text-center m-6" style={titleStyles}>Registrar</h2>
       
-      <div style={divStyles}>
-        <label htmlFor="Cantidad" style={labelStyles} className="form-label">
-          Cantidad
-        </label>
-        <input
-          styles="display: inline"
-          type={"cantidad"}
-          className="form-control"
-          placeholder="Ingrese cantidad"
-          name="cantidad"
-          value={cantidad}
-          onChange={(e) => onInputChange(e)}
-          required
-        />
-      </div>
+      <form onSubmit={(e) => onSubmit(e)}  className="p-3" >
 
-      <div style={divStyles}>
-        <label htmlFor="Estado" style={labelStyles} className="form-label">
-          Estado
-        </label>
-        <select 
-          styles="display: inline"
-          type={"text"}
-          className="form-control"
-          placeholder="Seleccione estado del artículo"
-          required
-          name="estado"
-          value={estado}
-          onChange={(e) => onInputChange(e)}
-        >
-          <option value="1">Bueno</option>
-          <option value="2" selected>Malo</option>
-          <option value="3">Regular</option>
-        </select>
-      </div>
+        <div style={divStyles}>
+          <label htmlFor="Estado" style={labelStyles} className="form-label">
+            Tipo
+          </label>
+          <select 
+            styles="display: inline"
+            type={"text"}
+            className="form-control"
+            placeholder="Seleccione tipo de artículo"
+            required
+            name="tipo"
+            value={tipo}
+            onChange={(e) => onInputChange(e)}
+          >
+            <option value="1">Ropa</option>
+            <option value="3">Juguete</option>
+          </select>
+        </div>
 
-      {/* <Link className="btn btn-danger mt-4" to="/articulos/addarticle">
-        Enviar Donacion
-      </Link> */}
-      <button type="submit" className="btn btn-danger mt-4">
-        Enviar Donacion
-      </button>
-      <Link className="btn btn-outline-danger mx-2" to="/">
-        Cancelar
-      </Link>
-    </form>
-            </div>
+        <div style={divStyles}>
+          <label htmlFor="Imagen" style={labelStyles} className="form-label">
+            Imagen
+          </label>
+          <input
+            styles="display: inline"
+            type={"text"}
+            className="form-control"
+            placeholder="Ingrese link de la imagen"
+            name="imagen"
+            value={imagen}
+            onChange={(e) => onInputChange(e)}
+            required
+          />
+        </div>
+        
+        <div style={divStyles}>
+          <label htmlFor="Cantidad" style={labelStyles} className="form-label">
+            Cantidad
+          </label>
+          <input
+            styles="display: inline"
+            type={"cantidad"}
+            className="form-control"
+            placeholder="Ingrese cantidad"
+            name="cantidad"
+            value={cantidad}
+            onChange={(e) => onInputChange(e)}
+            required
+          />
+        </div>
+
+        <div style={divStyles}>
+          <label htmlFor="Estado" style={labelStyles} className="form-label">
+            Estado
+          </label>
+          <select 
+            styles="display: inline"
+            type={"text"}
+            className="form-control"
+            placeholder="Seleccione estado del artículo"
+            required
+            name="estado"
+            value={estado}
+            onChange={(e) => onInputChange(e)}
+          >
+            <option value="1">Bueno</option>
+            <option value="2" selected>Malo</option>
+            <option value="3">Regular</option>
+          </select>
+        </div>
+
+        <button type="submit" className="btn btn-danger mt-4">
+          Enviar Donacion
+        </button>
+        <Link className="btn btn-outline-danger mx-2" to="/">
+          Cancelar
+        </Link>
+      </form>
+            </>
+
       );
 }
  
