@@ -20,7 +20,7 @@ const Articulos = () => {
     };
   
     const deletearticle = async (id) => {
-      await axios.delete(`http://localhost:8090/articulos/eliminar/${id}`);
+      await axios.delete(`https://sistemadonaciones.rj.r.appspot.com/articulos/eliminar/${id}`);
       loadArticles();
     };
 
