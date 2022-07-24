@@ -22,9 +22,9 @@ const AddArticle = ({setIdArticle = 0}) => {
         e.preventDefault();
         alert("Envio procesandose")
         console.log(article)
-        await axios.post("http://localhost:8090/articulos/guardar", article)
+        await axios.post("https://sistemadonaciones.rj.r.appspot.com/articulos/guardar", article)
          .then(res=>setArticle(res.data.id));
-        navigate("/articulos");
+        // navigate("/articulos");
         alert('Envio registrado');
       };
     

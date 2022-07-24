@@ -93,6 +93,11 @@ export default function AddUser({idSavedUser,setIdSavedUser}) {
             <button type="submit" className="btn btn-success">
               Enviar
             </button>
+            <Link className="btn" to="/encuesta">
+              <button type="submit" className="btn btn-primary ms-2">
+                Responder Encuesta
+              </button>
+            </Link>
           </form>
         </div>
   );
