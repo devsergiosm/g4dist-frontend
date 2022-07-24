@@ -81,9 +81,11 @@ export default function Encuesta() {
                 name="apellidos"
               />
             </div>
-            <button type="submit" className="btn btn-success">
-              Enviar
-            </button>
+            <Link className="btn" to="/">
+              <button type="submit" className="btn btn-success">
+                Enviar
+              </button>
+            </Link>
           </form>
         </div>
   );
