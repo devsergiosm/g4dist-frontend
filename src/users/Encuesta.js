@@ -40,7 +40,7 @@ export default function Encuesta() {
             </div>
             <div style={divStyles}>
               <label htmlFor="Email" style={labelStyles} className="form-label">
-              ¿Qué tipo de articulo es más probable que dones?
+              ¿Qué tipo de artículo es más probable que dones?
               </label>
               <select 
                 styles="display: inline"
