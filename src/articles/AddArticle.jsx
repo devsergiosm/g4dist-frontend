@@ -51,7 +51,7 @@ const AddArticle = ({setIdArticle = 0}) => {
       return (
             // <div className="col-md-4 offset-md-3 border rounded shadow" style={containerStyles}>
             <>
-                          <h2 className="text-center m-6" style={titleStyles}>Registrar</h2>
+                          <h2 className="text-center m-6" style={titleStyles}>Registro de artículos</h2>
       
       <form onSubmit={(e) => onSubmit(e)}  className="p-3" >
 

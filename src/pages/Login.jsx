@@ -5,14 +5,6 @@ import Footer from "../componentes/Footer";
 const Login = () => {
     let navigate = useNavigate();
 
-    const titleStyles = {
-        padding:"6px 12px 0 12px",
-        fontSize:"24px",
-        borderRadius:"4px",
-        color:"white",
-        margin:"0"
-      }
-
       const containerStyles = {
         width:"400px",
         borderRadius:"4px",
@@ -30,7 +22,7 @@ const Login = () => {
         <div className="container">
             <div className="row d-flex justify-content-center" style={containerStyles}>
                 <>
-                    <p style={titleStyles}>ACCEDER</p>
+                    <p className="text-info h3 py-2 px-3">ACCEDER</p>
                     <form action="" className="d-flex flex-column" onSubmit={onSubmit}>
                         <label htmlFor="" className="p-2 d-flex justify-content-between">
                             <span className="text-white me-2">Usuario</span>
@@ -40,15 +32,17 @@ const Login = () => {
                             <span className="text-white me-2">Contraseña</span>
                             <input type="password" required/>
                         </label>
-                        <div>
-                            <button type="submit" className="btn btn-primary m-1" to="/articulos/addarticle">
+                        <div className="mt-4">
+                            <button type="submit" className="btn btn-info m-1" to="/articulos/addarticle">
                                 Iniciar Sesion
                             </button>
-                            <button type="submit" className="btn btn-danger m-1" to="/articulos/addarticle">
-                                Registrarse
-                            </button>
                         </div>
-                        <span className="mt-4"> 2020</span>
+                        <div className="p-2 d-flex justify-content-end d-row mt-4 h6">
+                            <span className="text-muted m-1 p-1">¿Aún no tienes una cuenta?</span>
+                            <Link className="btn btn-outline-danger m-1" to="/login">
+                                Registrarse
+                            </Link>
+                        </div>
                     </form>
                 </>
             </div>

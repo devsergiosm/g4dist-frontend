@@ -53,7 +53,7 @@ const Articulos = () => {
         <>
             <header>
                 <h2 className="text-center m-6" style={divStyles}>
-                    ARTICULOS
+                    Artículos
                     <Link className="btn" style={btnStyles} to="/">
                         Usuarios
                     </Link>
@@ -71,7 +71,7 @@ const Articulos = () => {
                         <tr>
                         <th scope="col">N°</th>
                         <th scope="col">Tipo</th>
-                        <th scope="col">Url de Imagen</th>
+                        <th scope="col">Imagen</th>
                         <th scope="col">Cantidad</th>
                         <th scope="col">Estado</th>
                         <th scope="col">Acciones</th>

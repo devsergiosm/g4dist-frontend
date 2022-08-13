@@ -12,6 +12,7 @@ import EditArticle from "./articles/EditArticle";
 import ViewArticle from "./articles/ViewArticle";
 import Transaccion from "./pages/Transaccion";
 import Login from "./pages/Login";
+import Signup from "./pages/Signup";
 import PanelArticulos from "./articles/PanelArticulos";
 import Encuesta from "./users/Encuesta";
 import Contacto from "./users/Contacto";
@@ -34,6 +35,7 @@ function App() {
           
           <Route exact path="/" element={<Home />} />
           <Route exact path="/login" element={<Login />} />
+          <Route exact path="/signup" element={<Signup />} />
           <Route exact path="/transaccion" element={<Transaccion />} />
           <Route exact path="/articulos" element={<Articulos />} />
           <Route exact path="/encuesta" element={<Encuesta />} />
