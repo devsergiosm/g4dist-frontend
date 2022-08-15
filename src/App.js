@@ -16,7 +16,7 @@ import Signup from "./pages/Signup";
 import PanelArticulos from "./articles/PanelArticulos";
 import Encuesta from "./users/Encuesta";
 import Contacto from "./users/Contacto";
-
+import { ToastContainer, toast } from 'react-toastify';
 
 function App() {
 
@@ -49,6 +49,7 @@ function App() {
           <Route exact path="/viewuser/:id" element={<ViewUser />} />
         </Routes>
       </Router>
+      <ToastContainer />
     </div>
   );
 }

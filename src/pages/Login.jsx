@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../componentes/Footer";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Login = () => {
     let navigate = useNavigate();
@@ -14,7 +15,6 @@ const Login = () => {
 
       const onSubmit = async (e) => {
         e.preventDefault();
-        alert("Login procesándose")
         navigate("/articulos/addarticle");
       };
 
@@ -39,7 +39,7 @@ const Login = () => {
                         </div>
                         <div className="p-2 d-flex justify-content-end d-row mt-4 h6">
                             <span className="text-muted m-1 p-1">¿Aún no tienes una cuenta?</span>
-                            <Link className="btn btn-outline-danger m-1" to="/login">
+                            <Link className="btn btn-outline-danger m-1" to="/signup">
                                 Registrarse
                             </Link>
                         </div>
