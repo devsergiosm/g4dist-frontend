@@ -21,6 +21,12 @@ export default function Navbar() {
   const handleLogout = () => {
     handleUsername('');
     localStorage.removeItem('username');
+    localStorage.removeItem('tipo');
+    localStorage.removeItem('imagen');
+    localStorage.removeItem('cantidad');
+    localStorage.removeItem('estado');
+    localStorage.removeItem('username');
+    localStorage.removeItem('lugar');
 
     toast.info('Cerrando sesión!', {
       position: "top-right",

@@ -11,10 +11,11 @@ const AddArticle = ({setIdArticle = 0}) => {
         tipo: "",
         imagen: "",
         cantidad: "",
-        estado: ""
+        estado: "",
+        lugar:""
       });
     
-      const { tipo, imagen,cantidad, estado } = article;
+      const { tipo, imagen,cantidad, estado, lugar } = article;
     
       const onInputChange = (e) => {
         setArticle({ ...article, [e.target.name]: e.target.value });
@@ -40,6 +41,7 @@ const AddArticle = ({setIdArticle = 0}) => {
         localStorage.setItem('cantidad',article.cantidad)
         // localStorage.setItem('estado',article.estado)
         localStorage.setItem('estado','Regular')
+        localStorage.setItem('lugar','Parque Huiracocha - SJL')
 
          navigate("/articulos/viewarticle/");
       };
@@ -138,6 +140,26 @@ const AddArticle = ({setIdArticle = 0}) => {
             <option value="1">Bueno</option>
             <option value="2" selected>Malo</option>
             <option value="3">Regular</option>
+          </select>
+        </div>
+
+        <div style={divStyles}>
+          <label htmlFor="Lugar" style={labelStyles} className="form-label">
+            Lugar de Entrega
+          </label>
+          <select 
+            styles="display: inline"
+            type={"text"}
+            className="form-control"
+            placeholder="Seleccione estado del artículo"
+            name="lugar"
+            value={lugar}
+            onChange={(e) => onInputChange(e)}
+          >
+            <option value="1">Lima Norte</option>
+            <option value="2" selected>Lima Sur</option>
+            <option value="3">Lima Este</option>
+            <option value="4">Lima Oeste</option>
           </select>
         </div>
 

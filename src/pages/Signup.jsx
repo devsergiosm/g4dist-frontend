@@ -54,7 +54,6 @@ const Signup = () => {
                     <hr/>
                 </>
             </div>
-            <Footer/>
         </div>
      );
 }

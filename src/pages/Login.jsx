@@ -70,7 +70,6 @@ const Login = () => {
                     </form>
                 </>
             </div>
-            <Footer/>
         </div>
      );
 }

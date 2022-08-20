@@ -11,6 +11,7 @@ const ViewArticle = () => {
         cantidad:localStorage.getItem('cantidad'),
         estado:localStorage.getItem('estado'),
         username:localStorage.getItem('username'),
+        username:localStorage.getItem('lugar'),
     }
 
     const containerStyles = {
@@ -58,6 +59,10 @@ const ViewArticle = () => {
                 <label htmlFor="" className="p-2 d-flex justify-content-between">
                     <span className="text-dark me-2">Imagen</span>
                     <img src={data.imagen} alt="" width='100' height='100'/>
+                </label>
+                <label htmlFor="" className="p-2 d-flex justify-content-between">
+                    <span className="text-dark me-2">Lugar de entrega recomendado</span>
+                    <img src={data.lugar} alt="" width='100' height='100'/>
                 </label>
                 <label htmlFor="" className="p-2 d-flex justify-content-between">
                     <span className="text-dark me-2">Estado de la entrega</span>

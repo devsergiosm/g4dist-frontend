@@ -24,6 +24,15 @@ const Articulos = () => {
       loadArticles();
     };
 
+    const data = {
+        tipo:localStorage.getItem('tipo') ? localStorage.getItem('tipo') : '',
+        imagen:localStorage.getItem('imagen') ? localStorage.getItem('imagen') : '',
+        cantidad:localStorage.getItem('cantidad') ? localStorage.getItem('cantidad') : '',
+        estado:localStorage.getItem('estado') ? localStorage.getItem('estado') : '',
+        username:localStorage.getItem('username') ? localStorage.getItem('username') : '',
+        username:localStorage.getItem('lugar') ? localStorage.getItem('lugar') : '',
+    }
+
     const divStyles = {
         // display:"flex",
         // flexDirection:"row",
@@ -68,7 +77,7 @@ const Articulos = () => {
                         <th scope="col">Acciones</th>
                         </tr>
                     </thead>
-                    <tbody>
+                    {/* <tbody>
                         {articles.map((article, index) => (
                         <tr key={index}>
                             <th scope="row" key={index}>
@@ -76,7 +85,6 @@ const Articulos = () => {
                             </th>
                             <td>{article.tipo}</td>
                             <td>
-                                {/* {article.imagen} */}
                                 <img src={article.imagen} alt="Imagen de donacion" width="80" />
                             </td>
                             <td>{article.cantidad}</td>
@@ -94,6 +102,37 @@ const Articulos = () => {
                             </td>
                         </tr>
                         ))}
+                    </tbody> */}
+                    <tbody>
+                        { data.tipo !== '' ? (
+                            <tr key={1}>
+                                <th scope="row" key={1}>
+                                {1}
+                                </th>
+                                <td>{data.tipo}</td>
+                                <td>
+                                    {/* {article.imagen} */}
+                                    <img src={data.imagen} alt="Imagen de donacion" width="80" />
+                                </td>
+                                <td>{data.cantidad}</td>
+                                <td>{data.estado}</td>
+                                <td>
+                                    <button
+                                        className="btn btn-danger mx-2"
+                                        onClick={() => deletearticle(1)}
+                                        >
+                                        Eliminar
+                                    </button>
+                                    <Link className="btn btn-success" to={`/editarticle/${1}`}>
+                                        Editar
+                                    </Link>
+                                </td>
+                            </tr>
+                        ) : (
+                            <div className='text-dark'>
+                                Sin artículos registrados
+                            </div>
+                        )}
                     </tbody>
                 </table>
             </main>
