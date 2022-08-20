@@ -1,6 +1,8 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
+import { toast, ToastContainer } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const AddArticle = ({setIdArticle = 0}) => {
     let navigate = useNavigate();
@@ -20,12 +22,18 @@ const AddArticle = ({setIdArticle = 0}) => {
     
       const onSubmit = async (e) => {
         e.preventDefault();
-        alert("Envio procesandose")
-        console.log(article)
+        toast.success('Solicitud de donación registrado!', {
+          position: "top-right",
+          autoClose: 1500,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          });
         await axios.post("https://sistemadonaciones.rj.r.appspot.com/articulos/guardar", article)
          .then(res=>setArticle(res.data.id));
         // navigate("/articulos");
-        alert('Envio registrado');
       };
     
     
@@ -115,7 +123,6 @@ const AddArticle = ({setIdArticle = 0}) => {
             type={"text"}
             className="form-control"
             placeholder="Seleccione estado del artículo"
-            required
             name="estado"
             value={estado}
             onChange={(e) => onInputChange(e)}
@@ -133,6 +140,7 @@ const AddArticle = ({setIdArticle = 0}) => {
           Cancelar
         </Link>
       </form>
+      <ToastContainer />
             </>
 
       );

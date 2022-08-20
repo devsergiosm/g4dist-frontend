@@ -17,6 +17,7 @@ import PanelArticulos from "./articles/PanelArticulos";
 import Encuesta from "./users/Encuesta";
 import Contacto from "./users/Contacto";
 import { ToastContainer, toast } from 'react-toastify';
+import { UserProvider } from "./context/UserContext";
 
 function App() {
 
@@ -28,6 +29,7 @@ function App() {
 
   return (
     <div className="App" style={containerStyles}>
+      <UserProvider>
       <Router>
         <Navbar />
 
@@ -49,6 +51,8 @@ function App() {
           <Route exact path="/viewuser/:id" element={<ViewUser />} />
         </Routes>
       </Router>
+      </UserProvider>
+      
       <ToastContainer />
     </div>
   );

@@ -3,7 +3,6 @@ import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 
 export default function AddUser({idSavedUser,setIdSavedUser}) {
-  let navigate = useNavigate();
 
   const [user, setUser] = useState({
     dni: "",

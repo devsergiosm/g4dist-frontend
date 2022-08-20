@@ -2,9 +2,14 @@ import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import Footer from "../componentes/Footer";
 import { ToastContainer, toast } from 'react-toastify';
+import { useContext } from "react";
+import UserContext from "../context/UserContext";
 
 const Login = () => {
     let navigate = useNavigate();
+
+    const [thisUsername, setThisUsername] = useState('')
+    const {handleUsername} = useContext(UserContext)
 
       const containerStyles = {
         width:"400px",
@@ -15,8 +20,24 @@ const Login = () => {
 
       const onSubmit = async (e) => {
         e.preventDefault();
+        toast.success('Login exitoso!', {
+            position: "top-right",
+            autoClose: 1500,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            });
+        localStorage.setItem('username',thisUsername)
+        handleUsername(thisUsername)
         navigate("/articulos/addarticle");
       };
+
+      const thisHandleUsername = (e) =>{
+        setThisUsername(e.target.value)
+        // console.log(e)
+      }
 
     return ( 
         <div className="container">
@@ -26,7 +47,10 @@ const Login = () => {
                     <form action="" className="d-flex flex-column" onSubmit={onSubmit}>
                         <label htmlFor="" className="p-2 d-flex justify-content-between">
                             <span className="text-white me-2">Usuario</span>
-                            <input type="text" required/>
+                            <input type="text" 
+                            required 
+                            // value={thisUsername} 
+                            onChange={thisHandleUsername}/>
                         </label>
                         <label htmlFor="" className="p-2 d-flex justify-content-between">
                             <span className="text-white me-2">Contraseña</span>

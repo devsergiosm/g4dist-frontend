@@ -1,7 +1,13 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useContext } from "react";
+import { Link, useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+
+import UserContext from '../context/UserContext'
 
 export default function Navbar() {
+  let navigate = useNavigate();
+
+  const {username,handleUsername} = useContext(UserContext)
 
   const titleStyles = {
     fontSize:"32px",
@@ -11,9 +17,26 @@ export default function Navbar() {
   const navStyles = {
     backgroundColor:"black",
   }
+
+  const handleLogout = () => {
+    handleUsername('');
+    localStorage.removeItem('username');
+
+    toast.info('Cerrando sesión!', {
+      position: "top-right",
+      autoClose: 1500,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+      });
+      navigate("/");
+  }
+
   return (
     <div>
-      <nav className="navbar navbar-expand-lg" style={navStyles}>
+      <nav className="navbar navbar-expand-lg bg-dark">
         <div className="container-fluid">
           <Link style={titleStyles} className="navbar-brand" to="/">
             <img src="images/sanmarcos.png" alt="" width="72" height="96"/>
@@ -41,9 +64,22 @@ export default function Navbar() {
             <Link className="btn btn-outline-light m-2" to="/contacto">
               Contacto
             </Link>
-            <Link className="btn btn-outline-light m-4 btn-danger" to="/login">
-              Iniciar Sesion
-            </Link>
+
+            
+            { username ? (
+              <span className="">
+                <span className="text-white ms-3">Bienvenido {username}</span>
+                <button className="btn btn-outline-light m-4 btn-danger" onClick={handleLogout}>
+                  Cerrar Sesion
+                </button>
+              </span>
+            ) : (
+              <Link className="btn btn-outline-light m-4 btn-danger" to="/login">
+                Iniciar Sesion
+              </Link>
+            )
+          }
+
           </div>
         </div>
       </nav>
