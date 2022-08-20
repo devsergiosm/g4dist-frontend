@@ -53,16 +53,7 @@ const Articulos = () => {
         <>
             <header>
                 <h2 className="text-center m-6" style={divStyles}>
-                    Artículos
-                    <Link className="btn" style={btnStyles} to="/">
-                        Usuarios
-                    </Link>
-                    <Link className="btn" style={btnStyles} to="/transaccion">
-                        Donaciones
-                    </Link>
-                    <Link className="btn" style={btnStyles} to="/articulos/addarticle">
-                        Agregar Artículo
-                    </Link>
+                    Artículos previos
                 </h2>
             </header>
             <main>

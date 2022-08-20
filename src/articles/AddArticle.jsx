@@ -31,9 +31,17 @@ const AddArticle = ({setIdArticle = 0}) => {
           draggable: true,
           progress: undefined,
           });
-        await axios.post("https://sistemadonaciones.rj.r.appspot.com/articulos/guardar", article)
-         .then(res=>setArticle(res.data.id));
-        // navigate("/articulos");
+        // await axios.post("https://sistemadonaciones.rj.r.appspot.com/articulos/guardar", article)
+        //  .then(res=>setArticle(res.data.id));
+        console.log(article)
+        // localStorage.setItem('tipo',article.tipo)
+        localStorage.setItem('tipo','Ropa')
+        localStorage.setItem('imagen',article.imagen)
+        localStorage.setItem('cantidad',article.cantidad)
+        // localStorage.setItem('estado',article.estado)
+        localStorage.setItem('estado','Regular')
+
+         navigate("/articulos/viewarticle/");
       };
     
     
@@ -59,12 +67,12 @@ const AddArticle = ({setIdArticle = 0}) => {
       return (
             // <div className="col-md-4 offset-md-3 border rounded shadow" style={containerStyles}>
             <>
-                          <h2 className="text-center m-6" style={titleStyles}>Registro de artículos</h2>
+      <h2 className="text-center m-6" style={titleStyles}>Registro de artículos</h2>
       
       <form onSubmit={(e) => onSubmit(e)}  className="p-3" >
 
         <div style={divStyles}>
-          <label htmlFor="Estado" style={labelStyles} className="form-label">
+          <label htmlFor="Tipo" style={labelStyles} className="form-label">
             Tipo
           </label>
           <select 

@@ -44,7 +44,7 @@ function App() {
           {/* <Route exact path="/articulos" element={<PanelArticulos />} /> */}
           <Route exact path="/articulos/addarticle" element={<PanelArticulos />} />
           <Route exact path="/articulos/editarticle/:id" element={<EditArticle />} />
-          <Route exact path="/articulos/viewarticle/:id" element={<ViewArticle />} />
+          <Route exact path="/articulos/viewarticle" element={<ViewArticle />} />
           <Route exact path="/contacto" element={<Contacto />} />
           <Route exact path="/adduser" element={<AddUser />} />
           <Route exact path="/edituser/:id" element={<EditUser />} />

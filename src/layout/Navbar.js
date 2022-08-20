@@ -68,7 +68,9 @@ export default function Navbar() {
             
             { username ? (
               <span className="">
-                <span className="text-white ms-3">Bienvenido {username}</span>
+                <span className="text-white ms-3">
+                  <img src="../images/user.png" width="36" height="36"/>
+                  Bienvenido {username}</span>
                 <button className="btn btn-outline-light m-4 btn-danger" onClick={handleLogout}>
                   Cerrar Sesion
                 </button>
